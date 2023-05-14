@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { SortType } from '../const';
+import { SortType } from '../../const';
 
 const pointDayComparer = (firstPoint, secondPoint) => dayjs(firstPoint.dateFrom).diff(dayjs(secondPoint.dateFrom));
 const pointPriceComparer = (firstPoint, secondPoint) => secondPoint.basePrice - firstPoint.basePrice;
