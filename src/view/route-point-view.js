@@ -54,7 +54,7 @@ const routePointTemplate = (point, destinations, offers) => {
   );
 };
 
-export default class routePointView extends AbstractView {
+export default class RoutePointView extends AbstractView {
   #point = null
   #detinations = null
   #offers = null
