@@ -1,16 +1,12 @@
 import { render, RenderPosition, remove } from '../framework/render.js';
-import UiBlocker from '../framework/ui-blocker/ui-blocker.js';
 import PointsListView from '../view/points-list-view.js';
 import SortingView from '../view/sorting-view.js';
 import NoPointView from '../view/no-point-view.js';
-import LoadingView from '../view/loading-view.js';
-import NoAdditionalInfoView from '../view/no-additional-info-view.js';
 import PointPresenter from './point-presenter.js';
 import PointNewPresenter from './point-new-presenter.js';
 import { sorting } from '../utils/sorting.js';
 import { filter } from '../utils/filter.js';
-import { UpdateType, UserAction, SortType, FilterType, TimeLimit } from '../const.js';
-import TripInfoPresenter from './trip-info-presenter.js';
+import { UpdateType, UserAction, SortType, FilterType } from '../const.js';
 
 export default class BoardPresenter {
   #tripInfoContainer = null;
@@ -22,9 +18,6 @@ export default class BoardPresenter {
 
   #noPointComponent = null;
   #sortComponent = null;
-  #pointListComponent = new PointsListView();
-  #loadingComponent = new LoadingView();
-  #noAdditionalInfoComponent = new NoAdditionalInfoView();
 
   #pointPresenter = new Map();
   #pointNewPresenter = null;
@@ -33,7 +26,6 @@ export default class BoardPresenter {
   #currentSortType = SortType.DAY;
   #filterType = FilterType.EVERYTHING;
   #isLoading = true;
-  #uiBlocker = new UiBlocker(TimeLimit.LOWER_LIMIT, TimeLimit.UPPER_LIMIT);
 
   constructor({tripInfoContainer, tripContainer, pointsModel, filterModel, destinationsModel, offersModel}) {
     this.#tripInfoContainer = tripInfoContainer;
