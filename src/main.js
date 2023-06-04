@@ -1,23 +1,38 @@
-import FiltersView from './view/filters-view';
-import MenuView from './view/menu-view';
-import EventsPresenter from './presenter/presenter';
-import { render } from './framework/render';
-import PointsModel from './model/points-model';
-import { getPoints, getDestinations, getOffersByType } from './mock/point';
-import { generateFilters } from './mock/filters';
+import FilterPresenter from './presenter/filter-presenter.js';
+import BoardPresenter from './presenter/board-presenter.js';
+import SiteMenuView from './view/site-menu-view.js';
+import PointsModel from './model/points-model.js';
 
 const siteHeaderElement = document.querySelector('.trip-main');
 const siteMainElement = document.querySelector('.page-main');
-const tripPresenter = new EventsPresenter(siteMainElement.querySelector('.trip-events'));
-const points = getPoints();
-const destinations = getDestinations();
-const offers = getOffersByType();
-const pointsModel = new PointsModel();
 
-pointsModel.init(points, destinations, offers);
-tripPresenter.init(pointsModel);
+const pointsModel = new PointsModel(new PointsApiService(END_POINT, AUTHORIZATION));
 
-const filters = generateFilters(points);
+const filterPresenter = new FilterPresenter({
+  filterContainer: siteHeaderElement.querySelector('.trip-controls__filters'),
+  pointsModel: pointsModel,
+  destinationsModel: destinationsModel,
+  offersModel: offersModel,
+  filterModel: filterModel
+});
+filterPresenter.init();
 
-render(new FiltersView({filters}), siteHeaderElement.querySelector('.trip-controls__filters'));
-render(new MenuView(), siteHeaderElement.querySelector('.trip-controls__navigation'));
+const boardPresenter = new BoardPresenter({
+  tripInfoContainer: siteHeaderElement.querySelector('.trip-main__trip-info'),
+  tripContainer: siteMainElement.querySelector('.trip-events'),
+  pointsModel: pointsModel,
+  filterModel: filterModel,
+  destinationsModel: destinationsModel,
+  offersModel: offersModel
+});
+boardPresenter.init();
+
+offersModel.init().finally(() => {
+  destinationsModel.init().finally(() => {
+    pointsModel.init().finally(() => {
+      newPointButtonPresenter.renderNewPointButton();
+    });
+  });
+});
+
+render(new SiteMenuView(), siteHeaderElement.querySelector('.trip-controls__navigation'));
