@@ -1,5 +1,5 @@
-import ApiService from '../framework/api-service.js';
-import { ApiServiceResponseMethod } from '../const.js';
+import ApiService from '../framework/api-service';
+import { ApiServiceResponseMethod } from '../const';
 
 export default class DestinationsApiService extends ApiService {
   get destinations() {
