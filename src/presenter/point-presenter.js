@@ -1,7 +1,7 @@
-import { render, replace, remove } from '../framework/render.js';
-import PreviewPointView from '../view/preview-point-view.js';
-import PointView from '../view/point-view.js';
-import { UserAction, UpdateType } from '../const.js';
+import { render, replace, remove } from '../framework/render';
+import PreviewPointView from '../view/preview-point-view';
+import PointView from '../view/point-view';
+import { UserAction, UpdateType } from '../const';
 
 const Mode = {
   PREVIEW: 'preview',

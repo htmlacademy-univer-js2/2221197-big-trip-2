@@ -1,4 +1,4 @@
-import { getRandomInteger, getRandomElement } from '../utils/common.js';
+import { getRandomInteger, getRandomElement } from '../utils/common';
 import { nanoid } from 'nanoid';
 import dayjs from 'dayjs';
 const POINTS_COUNT = 20;
