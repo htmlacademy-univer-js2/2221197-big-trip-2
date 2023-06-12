@@ -1,5 +1,5 @@
 import AbstractView from '../framework/view/abstract-view.js';
-import {humanizePointDueDate } from '../utils/date-point.js';
+import { humanizePointDueDate } from '../utils/point-date.js';
 
 const renderRouteTrip = (points, destinations) => {
   if (points.length === 0) {
@@ -14,8 +14,8 @@ const renderRouteTrip = (points, destinations) => {
 
   if (routeWithoutRepeats.length > 3) {
     const startPoint = destinations.find((item) => item.id === routeWithoutRepeats[0]);
-    const endPoint = destinations.find((item) => item.id === routeWithoutRepeats[routeWithoutRepeats.length - 1]);
-    return `${startPoint.name} &mdash; ... &mdash; ${endPoint.name}`;
+    const finishPoint = destinations.find((item) => item.id === routeWithoutRepeats[routeWithoutRepeats.length - 1]);
+    return `${startPoint.name} &mdash; ... &mdash; ${finishPoint.name}`;
   }
 
   return routeWithoutRepeats.map((destination) => `${destinations.find((item) => item.id === destination).name}`).join(' &mdash; ');
@@ -26,11 +26,11 @@ const renderDatesTrip = (points) => {
     return '';
   }
   const startDate = points[0].dateFrom !== null ? humanizePointDueDate(points[0].dateFrom) : '';
-  const endDate = points[points.length - 1].dateTo !== null ? humanizePointDueDate(points[points.length - 1].dateTo) : '';
-  return `${startDate}&nbsp;&mdash;&nbsp;${endDate}`;
+  const finishDate = points[points.length - 1].dateTo !== null ? humanizePointDueDate(points[points.length - 1].dateTo) : '';
+  return `${startDate}&nbsp;&mdash;&nbsp;${finishDate}`;
 };
 
-const getPricePointOffers = (point, offers) => {
+const getOffersPrice = (point, offers) => {
   if (offers.length === 0) {
     return 0;
   }
@@ -50,7 +50,7 @@ const renderTotalPriceTrip = (points, offers) => {
   let totalPrice = 0;
   points.forEach((point) => {
     totalPrice += point.basePrice;
-    totalPrice += getPricePointOffers(point, offers);
+    totalPrice += getOffersPrice(point, offers);
   });
   return `Total: &euro;&nbsp;<span class="trip-info__cost-value">${totalPrice}</span>`;
 };
@@ -61,7 +61,6 @@ const createTripInfoTemplate = (points, destinations, offers) => {
   }
   return  `<div class="trip-info"><div class="trip-info__main">
   <h1 class="trip-info__title">${renderRouteTrip(points, destinations)}</h1>
-
   <p class="trip-info__dates">${renderDatesTrip(points)}</p>
 </div>
 <p class="trip-info__cost">
@@ -85,4 +84,3 @@ export default class TripInfoView extends AbstractView {
     return createTripInfoTemplate(this.#points, this.#destinations, this.#offers);
   }
 }
-

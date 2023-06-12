@@ -6,8 +6,8 @@ const createSiteMenuTemplate = () => (
 </nav>`
 );
 
-export default class SiteMenuView extends AbstractView {
-  get template () {
+export default class SiteMenuView extends AbstractView{
+  get template() {
     return createSiteMenuTemplate();
   }
 }
