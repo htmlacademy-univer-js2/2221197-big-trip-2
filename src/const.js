@@ -1,5 +1,16 @@
-const AUTHORIZATION = 'Basic hIfpbpd204fpubd6';
-const END_POINT = 'https://18.ecmascript.pages.academy/big-trip';
+const FilterType = {
+  EVERYTHING: 'everything',
+  FUTURE: 'future',
+  PAST: 'past',
+};
+
+const SortType = {
+  DAY: 'day',
+  EVENT: 'event',
+  TIME: 'time',
+  PRICE: 'price',
+  OFFER: 'offer',
+};
 
 const UserAction = {
   UPDATE_POINT: 'UPDATE_POINT',
@@ -11,32 +22,10 @@ const UpdateType = {
   PATCH: 'PATCH',
   MINOR: 'MINOR',
   MAJOR: 'MAJOR',
-  INIT: 'INIT'
+  INIT: 'INIT',
 };
 
-const FilterType = {
-  EVERYTHING: 'everything',
-  FUTURE: 'future',
-  PAST: 'past'
-};
-
-const SortType = {
-  DAY: 'day',
-  EVENT: 'event',
-  TIME: 'time',
-  PRICE: 'price',
-  OFFER: 'offer',
-};
-
-const SortTypeDescription = {
-  [SortType.DAY]: 'Day',
-  [SortType.EVENT]: 'Event',
-  [SortType.TIME]: 'Time',
-  [SortType.PRICE]: 'Price',
-  [SortType.OFFER]: 'Offer',
-};
-
-const PointType = {
+const Point = {
   TAXI: 'taxi',
   BUS: 'bus',
   TRAIN: 'train',
@@ -45,33 +34,26 @@ const PointType = {
   FLIGHT: 'flight',
   CHECK_IN: 'check-in',
   SIGHTSEEING: 'sightseeing',
-  RESTAURANT: 'restaurant'
+  RESTAURANT: 'restaurant',
 };
 
-const PointTypeDescription = {
-  [PointType.TAXI]: 'Taxi',
-  [PointType.BUS]: 'Bus',
-  [PointType.TRAIN]: 'Train',
-  [PointType.SHIP]: 'Ship',
-  [PointType.DRIVE]: 'Drive',
-  [PointType.FLIGHT]: 'Flight',
-  [PointType.CHECK_IN]: 'Check-in',
-  [PointType.SIGHTSEEING]: 'Sightseeing',
-  [PointType.RESTAURANT]: 'Restaurant'
+const PointDescription = {
+  [Point.TAXI]: 'Taxi',
+  [Point.BUS]: 'Bus',
+  [Point.TRAIN]: 'Train',
+  [Point.SHIP]: 'Ship',
+  [Point.DRIVE]: 'Drive',
+  [Point.FLIGHT]: 'Flight',
+  [Point.CHECK_IN]: 'Check-in',
+  [Point.SIGHTSEEING]: 'Sightseeing',
+  [Point.RESTAURANT]: 'Restaurant',
 };
 
-const ApiServiceResponseMethod = {
+const ApiServiceResponse = {
   GET: 'GET',
   PUT: 'PUT',
   POST: 'POST',
-  DELETE: 'DELETE'
+  DELETE: 'DELETE',
 };
 
-const TimeLimit = {
-  LOWER_LIMIT: 350,
-  UPPER_LIMIT: 1000,
-};
-
-
-export { UserAction, UpdateType, FilterType, SortType, SortTypeDescription, PointType, PointTypeDescription,
-  ApiServiceResponseMethod, AUTHORIZATION, END_POINT, TimeLimit };
+export { FilterType, SortType, UserAction, UpdateType, Point, PointDescription, ApiServiceResponse };
