@@ -1,4 +1,4 @@
-import AbstractView from '../framework/view/abstract-view.js';
+import AbstractView from '../framework/view/abstract-view';
 
 const createSiteMenuTemplate = () => (
   `<nav class="trip-controls__trip-tabs  trip-tabs">

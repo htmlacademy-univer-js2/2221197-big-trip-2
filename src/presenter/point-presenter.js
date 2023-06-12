@@ -1,8 +1,8 @@
-import EditingFormView from '../view/editing-form-view.js';
-import RoutePointView from '../view/route-point-view.js';
-import { render, replace, remove } from '../framework/render.js';
-import { UserAction, UpdateType } from '../const.js';
-import { isEscape } from '../utils/common.js';
+import EditingFormView from '../view/editing-form-view';
+import RoutePointView from '../view/route-point-view';
+import { render, replace, remove } from '../framework/render';
+import { UserAction, UpdateType } from '../const';
+import { isEscape } from '../utils/common';
 
 const Mode = {
   PREVIEW: 'preview',

@@ -1,7 +1,7 @@
-import EditingFormView from '../view/editing-form-view.js';
-import { render, remove, RenderPosition } from '../framework/render.js';
-import { isEscape } from '../utils/common.js';
-import { UserAction, UpdateType } from '../const.js';
+import EditingFormView from '../view/editing-form-view';
+import { render, remove, RenderPosition } from '../framework/render';
+import { isEscape } from '../utils/common';
+import { UserAction, UpdateType } from '../const';
 
 export default class PointNewPresenter {
   #pointListContainer = null;

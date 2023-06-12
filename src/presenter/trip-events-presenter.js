@@ -1,16 +1,16 @@
-import TripEventsView from '../view/trip-events-view.js';
-import SortingView from '../view/sorting-view.js';
-import NoPointView from '../view/no-point-view.js';
-import PointPresenter from './point-presenter.js';
-import PointNewPresenter from './point-new-presenter.js';
-import LoadingView from '../view/loading-view.js';
-import UiBlocker from '../framework/ui-blocker/ui-blocker.js';
-import ErrorMessageView from '../view/error-message-view.js';
-import TripInfoPresenter from './info-presenter.js';
-import { filter } from '../utils/filter.js';
-import { render, RenderPosition, remove } from '../framework/render.js';
-import { SortType, UserAction, UpdateType, FilterType } from '../const.js';
-import { sorting } from '../utils/point-date.js';
+import TripEventsView from '../view/trip-events-view';
+import SortingView from '../view/sorting-view';
+import NoPointView from '../view/no-point-view';
+import PointPresenter from './point-presenter';
+import PointNewPresenter from './point-new-presenter';
+import LoadingView from '../view/loading-view';
+import UiBlocker from '../framework/ui-blocker/ui-blocker';
+import ErrorMessageView from '../view/error-message-view';
+import TripInfoPresenter from './info-presenter';
+import { filter } from '../utils/filter';
+import { render, RenderPosition, remove } from '../framework/render';
+import { SortType, UserAction, UpdateType, FilterType } from '../const';
+import { sorting } from '../utils/point-date';
 
 const TimeLimit = {
   LOWER_LIMIT: 350,

@@ -1,4 +1,4 @@
-import { SortType } from '../const.js';
+import { SortType } from '../const';
 import dayjs from 'dayjs';
 
 const HOUR_MINUTES_COUNT = 60;

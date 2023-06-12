@@ -1,15 +1,15 @@
-import FilterPresenter from './presenter/filter-presenter.js';
-import TripEventsPresenter from './presenter/trip-events-presenter.js';
-import NewPointButtonPresenter from './presenter/new-point-button-presenter.js';
-import FilterModel from './model/filter-model.js';
-import PointsModel from './model/trip-points-model.js';
-import SiteMenuView from './view/site-menu-view.js';
-import DestinationsModel from './model/destinations-model.js';
-import OffersModel from './model/offers-model.js';
-import DestinationsApiService from './api-service/destinations-api.js';
-import OffersApiService from './api-service/offers-api.js';
-import PointsApiService from './api-service/points-api.js';
-import { render } from './framework/render.js';
+import FilterPresenter from './presenter/filter-presenter';
+import TripEventsPresenter from './presenter/trip-events-presenter';
+import NewPointButtonPresenter from './presenter/new-point-button-presenter';
+import FilterModel from './model/filter-model';
+import PointsModel from './model/trip-points-model';
+import SiteMenuView from './view/site-menu-view';
+import DestinationsModel from './model/destinations-model';
+import OffersModel from './model/offers-model';
+import DestinationsApiService from './api-service/destinations-api';
+import OffersApiService from './api-service/offers-api';
+import PointsApiService from './api-service/points-api';
+import { render } from './framework/render';
 
 const AUTHORIZATION = 'Basic 8nxo4bi4hwx2686k';
 const END_POINT = 'https://18.ecmascript.pages.academy/big-trip';

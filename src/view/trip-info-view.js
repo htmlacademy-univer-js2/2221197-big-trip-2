@@ -1,5 +1,5 @@
-import AbstractView from '../framework/view/abstract-view.js';
-import { humanizePointDueDate } from '../utils/point-date.js';
+import AbstractView from '../framework/view/abstract-view';
+import { humanizePointDueDate } from '../utils/point-date';
 
 const renderRouteTrip = (points, destinations) => {
   if (points.length === 0) {

@@ -1,5 +1,5 @@
-import TripInfoView from '../view/trip-info-view.js';
-import { render, remove } from '../framework/render.js';
+import TripInfoView from '../view/trip-info-view';
+import { render, remove } from '../framework/render';
 
 export default class TripInfoPresenter {
   #points = null;
