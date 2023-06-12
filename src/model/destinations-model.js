@@ -1,4 +1,4 @@
-import Observable from '../framework/observable.js';
+import Observable from '../framework/observable';
 
 export default class DestinationsModel extends Observable {
   #destinations = [];

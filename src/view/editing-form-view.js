@@ -1,6 +1,6 @@
-import AbstractStatefulView from '../framework/view/abstract-stateful-view.js';
-import { getDateTime } from '../utils/point-date.js';
-import { Point, PointDescription } from '../const.js';
+import AbstractStatefulView from '../framework/view/abstract-stateful-view';
+import { getDateTime } from '../utils/point-date';
+import { Point, PointDescription } from '../const';
 import 'flatpickr/dist/flatpickr.min.css';
 import flatpickr from 'flatpickr';
 import dayjs from 'dayjs';
